@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "seed": "node seed/seed.js",
     "test": "jest",
     "start": "node server.js",
     "dev": "nodemon server.js"
@@ -12,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/PabloMatMar/Store.git"
   },
-  "author": "Pablo mateos martin",
+  "author": "Pablo Mateos Martin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/PabloMatMar/Store/issues"
