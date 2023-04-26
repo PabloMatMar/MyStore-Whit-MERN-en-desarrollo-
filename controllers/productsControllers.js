@@ -1,4 +1,5 @@
-const Product = require('../models/Products');
+const Product = require('../models/products');
+const Providers = require('../models/providers');
 
 
 const getProducts = async (req, res) => {
@@ -14,11 +15,11 @@ const getProducts = async (req, res) => {
 
 const getSpecificProduct = async (req, res) => {
     try {
-        const product = await Product.find({ id: req.params.id }, { _id: 0, __v: 0 });
+        const product = await Product.find({ id: req.params.id }, { _id: 0, __v: 0 }).populate({path: 'provider', Model: Providers });
         res.json(product);
 
     } catch (err) {
-        const product = await Product.find({ id: req.params.id }, { _id: 0, __v: 0 });
+        const product = await Product.find({ id: req.params.id });
         if (product === undefined) {
             req.status(404).send('This product doesnt exist');
         } else {

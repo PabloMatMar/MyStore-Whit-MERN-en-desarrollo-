@@ -24,9 +24,9 @@ const objectSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    // image: {
-    //     type: String
-    // },
+    image: {
+        type: String
+    },
     provider: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Providers',
