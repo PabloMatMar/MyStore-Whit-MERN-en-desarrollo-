@@ -8,14 +8,13 @@ import { Routes, Route } from 'react-router-dom';
 const Main = () => {
 
   return <main className='main'>
-      <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/products/:id" element={<Details />} />
+    <Routes>
+      <Route path="/" element={<Products />} />
+      <Route path="/products/:id" element={<Details />} />
 
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
   </main >
 };
-
 
 export default Main;
