@@ -16,16 +16,9 @@ const Products = () => {
     const res = await fetch('http://localhost:5000/products')
     const data = await res.json();
     const status = res.status;
-    setStatus(status)
-    setProducts(data)
-    console.log(data);
+    setStatus(status);
+    setProducts(data);
   }
-
-
-  console.log("*****")
-  console.log(products)
-  console.log("*****")
-
 
   return <section>
       {status === 200 ?

@@ -1,14 +1,10 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const Card = ({ products }) => {
-  console.log("****")
-  console.log(products)
-  console.log("****")
-
   return <div>
-
     {products !== undefined ?
-      <span>
+      <>
         <p>Name: <br />
           {products.name}
         </p>
@@ -18,9 +14,9 @@ const Card = ({ products }) => {
         <p>Price: <br />
           {products.price}€
         </p>
-        <img src={products.image}/>
-        <a href={'http://localhost:3000/products/'+products.id}>Details</a>
-      </span> :
+        <img src={products.image} alt={products.name}/>
+        <Link to={'http://localhost:3000/products/'+products.id}>Details</Link>
+      </> :
       <></>
     }
 
