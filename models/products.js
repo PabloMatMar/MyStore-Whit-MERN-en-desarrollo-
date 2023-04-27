@@ -6,11 +6,6 @@ const objectSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users'
     },
-    id: {
-        type: Number,
-        required: true,
-        unique: true
-    },
     name: {
         type: String,
         required: true,
@@ -25,7 +20,16 @@ const objectSchema = mongoose.Schema({
         required: true
     },
     image: {
-        type: String
+        type: String,
+        required: true
+    },
+    age: {
+        type: String,
+        required: true
+    },
+    console: {
+        type: String,
+        required: true
     },
     provider: {
         type: mongoose.Schema.Types.ObjectId,
