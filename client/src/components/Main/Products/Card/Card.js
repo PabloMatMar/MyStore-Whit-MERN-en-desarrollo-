@@ -14,7 +14,7 @@ const Card = ({ products }) => {
         <p>Price: <br />
           {products.price}€
         </p>
-        <img src={products.image} alt={products.name}/>
+        <img src={products.image} alt={products.name}/> <br />
         <Link to={'http://localhost:3000/products/'+products.id}>Details</Link>
       </> :
       <></>
