@@ -20,47 +20,38 @@ const providers = [
     {
         "company_name": "Gatos0",
         "CIF": "F7DS9F98S",
-        "address": "Calle del persa",
-    },
+        "address": "Calle del persa",    },
     {
         "company_name": "Gatos1",
         "CIF": "F9S7D98SD",
-        "address": "Calle del egipcio",
-    },
+        "address": "Calle del egipcio",    },
     {
         "company_name": "Gatos2",
         "CIF": "F9S7D9FSD",
-        "address": "Calle de mala gata",
-    },
+        "address": "Calle de mala gata",    },
     {
         "company_name": "Gatos3",
         "CIF": "79FSD98",
-        "address": "Calle de la human-cat",
-    },
+        "address": "Calle de la human-cat",    },
     {
         "company_name": "Gatos4",
         "CIF": "GSF799GS9D",
-        "address": "Calle del gatito",
-    },
+        "address": "Calle del gatito",    },
     {
         "company_name": "Gatos5",
         "CIF": "G9S7DG9SD",
-        "address": "Calle de todas las razas",
-    },
+        "address": "Calle de todas las razas",    },
     {
         "company_name": "Gatos6",
         "CIF": "GSD98GSD",
-        "address": "Calle de gatos",
-    },
+        "address": "Calle de gatos",    },
     {
         "company_name": "Gatos7",
         "CIF": "G8SD6D69GSD",
-        "address": "Calle del lince",
-    }, {
+        "address": "Calle del lince",    }, {
         "company_name": "Gatos8",
         "CIF": "G87SF9S",
-        "address": "Calle del callejero",
-    },
+        "address": "Calle del callejero",    },
     {
         "company_name": "Gatos9",
         "CIF": "79SFDGSD9",
@@ -76,8 +67,10 @@ const products = [
         "relevance": 4.7,
         "price": 60.25,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Insomniac Games"],
+        "genre": ["Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=Q3kfF3XNzw8",
     },
     {
         "image": "../assets/horizon.jpg",
@@ -85,8 +78,10 @@ const products = [
         "relevance": 4.7,
         "price": 79.98,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Guerrilla Games"],
+        "genre": ["Rol", "Adventure", "Open World"],
+        "trailer": "https://www.youtube.com/watch?v=p9a2SlsbV3w",
     },
     {
         "image": "../assets/ratchetClank.jpg",
@@ -94,8 +89,10 @@ const products = [
         "relevance": 4.8,
         "price": 79.19,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Insomniac Games"],
+        "genre": ["Platforms"],
+        "trailer": "https://www.youtube.com/watch?v=IkPWYH403tU",
     },
     {
         "image": "../assets/granTurismo.jpg",
@@ -103,17 +100,21 @@ const products = [
         "relevance": 4.5,
         "price": 46.98,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Polyphony Digital"],
+        "genre": ["Racing simulation"],
+        "trailer": "https://www.youtube.com/watch?v=1tBUsXIkG1A",
     },
     {
         "image": "../assets/callOfDuty.jpg",
-        "name": "Call Of Dutty",
+        "name": "Call of Duty: Modern Warfare II",
         "relevance": 4.6,
         "price": 79.99,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Infinity Ward"],
+        "genre": ["Shoter"],
+        "trailer": "https://www.youtube.com/watch?v=T57a2wE_hpk",
     },
     {
         "image": "../assets/sonicFrontiers.jpg",
@@ -121,8 +122,10 @@ const products = [
         "relevance": 4.6,
         "price": 39.99,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Sonic Team"],
+        "genre": ["Platforms"],
+        "trailer": "https://www.youtube.com/watch?v=30-rKqe1Ys8",
     },
     {
         "image": "../assets/minecraftLegends.jpg",
@@ -130,8 +133,10 @@ const products = [
         "relevance": 4.2,
         "price": 49.99,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Mojang Studios"],
+        "genre": ["Strategy"],
+        "trailer": "https://www.youtube.com/watch?v=L1o-3x0KNVc",
     },
     {
         "image": "../assets/nickelodeonAllStarBrawl.jpg",
@@ -139,8 +144,10 @@ const products = [
         "relevance": 4.3,
         "price": 32.67,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Ludosity"],
+        "genre": ["Fights"],
+        "trailer": "https://www.youtube.com/watch?v=xmXEt9lgpz0",
     },
     {
         "image": "../assets/metroExodus.jpg",
@@ -148,8 +155,10 @@ const products = [
         "relevance": 4.3,
         "price": 29.70,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["4A Games"],
+        "genre": ["Shoter", "Horror"],
+        "trailer": "https://www.youtube.com/watch?v=c_YddLpfD5o",
     },
     {
         "image": "../assets/likeADragonIshin.jpg",
@@ -157,8 +166,10 @@ const products = [
         "relevance": 4.7,
         "price": 62.78,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Ryu ga Gotoku Studio"],
+        "genre": ["Figth", "Adventure", "Open World"],
+        "trailer": "https://www.youtube.com/watch?v=xT-Z_SgPC2w",
     },
     {
         "image": "../assets/howartsLegacy.jpg",
@@ -166,8 +177,10 @@ const products = [
         "relevance": 4.8,
         "price": 75.27,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Portkey Games"],
+        "genre": ["Rol", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=S6GTl_vPRvU",
     },
     {
         "image": "../assets/forspoken.jpg",
@@ -175,8 +188,10 @@ const products = [
         "relevance": 4.3,
         "price": 70.05,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Luminous Productions"],
+        "genre": ["Rol"],
+        "trailer": "https://www.youtube.com/watch?v=9kMXdmswTFQ",
     },
     {
         "image": "../assets/wolongFallenDinasty.jpg",
@@ -184,8 +199,10 @@ const products = [
         "relevance": 3.8,
         "price": 72.99,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Team Ninja"],
+        "genre": ["Fight", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=xlmdeQFyqC0",
     },
     {
         "image": "../assets/scarsAbove.jpg",
@@ -193,8 +210,10 @@ const products = [
         "relevance": 4.2,
         "price": 42.84,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Koch Media GmbH"],
+        "genre": ["Shoter", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=Mvj5apgk7kI",
     },
     {
         "image": "../assets/aeternaNoctis.jpg",
@@ -202,8 +221,10 @@ const products = [
         "relevance": 4.4,
         "price": 40.31,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Aeternum Game Studio"],
+        "genre": ["Platforms"],
+        "trailer": "",
     },
     {
         "image": "../assets/valkyrieElysium.jpg",
@@ -211,8 +232,10 @@ const products = [
         "relevance": 4.5,
         "price": 72.9,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Team Ninja"],
+        "genre": ["Rol", "Fight", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=0QWxP3iFmvs",
     },
     {
         "image": "../assets/astronite.jpg",
@@ -220,8 +243,10 @@ const products = [
         "relevance": 4.7,
         "price": 24.99,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Dume Games Studio"],
+        "genre": ["Platforms", "Adventure", "Shoter"],
+        "trailer": "https://www.youtube.com/watch?v=xlfcwc-OTd4",
     },
     {
         "image": "../assets/relayer.jpg",
@@ -229,8 +254,10 @@ const products = [
         "relevance": 4.6,
         "price": 59.90,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Kadokawa Games"],
+        "genre": ["Rol", "Strategy","Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=59u6R8DUz1E",
     },
     {
         "image": "../assets/evilWest.jpg",
@@ -238,8 +265,10 @@ const products = [
         "relevance": 4.0,
         "price": 36.58,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Flying Wild Hog"],
+        "genre": ["Shoter"],
+        "trailer": "https://www.youtube.com/watch?v=2hP6IVcHRnQ",
     },
     {
         "image": "../assets/aPlaguetaleRequiem.jpg",
@@ -247,8 +276,10 @@ const products = [
         "relevance": 4.7,
         "price": 63.04,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Asobo Studio"],
+        "genre": ["Strategy", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=NAuzkT5A4xM",
     },
     {
         "image": "../assets/shadowWarrior.jpg",
@@ -256,8 +287,10 @@ const products = [
         "relevance": 3.7,
         "price": 40.20,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Flying Wild Hog"],
+        "genre": ["Shoter", "Horror"],
+        "trailer": "https://www.youtube.com/watch?v=zfcK2vlX95U",
     },
     {
         "image": "../assets/fairyFencerFRefrainChord.jpg",
@@ -265,8 +298,10 @@ const products = [
         "relevance": 4.1,
         "price": 59.99,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Sting Entertainment", "Compile Heart", "Idea Factory"],
+        "genre": ["Rol", "Strategy", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=E0in01DbFHE",
     },
     {
         "image": "../assets/neptuniaSisterVsSister.jpg",
@@ -274,8 +309,10 @@ const products = [
         "relevance": 4.8,
         "price": 60.32,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Compile Heart", "Idea Factory"],
+        "genre": ["Rol", "Adventure", "Fight"],
+        "trailer": "https://www.youtube.com/watch?v=aSjeDksK6nw",
     },
     {
         "image": "../assets/neptuniaReverse.jpg",
@@ -283,8 +320,10 @@ const products = [
         "relevance": 4.3,
         "price": 50.39,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Compile Heart", "Idea Factory", "Felistella"],
+        "genre": ["Rol", "Aventure"],
+        "trailer": "https://www.youtube.com/watch?v=ixug9quQJaM",
     },
     {
         "image": "../assets/unchartedElLegadoPerdido.jpg",
@@ -292,8 +331,10 @@ const products = [
         "relevance": 4.7,
         "price": 34.47,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Naughty Dog"],
+        "genre": ["Adventure", "Shoter"],
+        "trailer": "https://www.youtube.com/watch?v=Q7_7Y471qHk",
     },
     {
         "image": "../assets/sackBoyABigAventure.jpg",
@@ -301,8 +342,10 @@ const products = [
         "relevance": 4.6,
         "price": 69.75,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Sumo Digital", "xdev software gmbh"],
+        "genre": ["Platforms", "Adventure", "fight"],
+        "trailer": "https://www.youtube.com/watch?v=MEoy6gqOsRE",
     },
     {
         "image": "../assets/finalFantasyVII.jpg",
@@ -310,8 +353,10 @@ const products = [
         "relevance": 4.7,
         "price": 54.90,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Square Enix"],
+        "genre": ["Fight", "Rol", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=Ge73iBqc7o8",
     },
     {
         "image": "../assets/goodByeWorld.jpg",
@@ -319,8 +364,10 @@ const products = [
         "relevance": 4.1,
         "price": 39.99,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["yo fujii", "isolation studio"],
+        "genre": ["Platforms", "Classic"],
+        "trailer": "https://www.youtube.com/watch?v=Gc3eRKsSFxg",
     },
     {
         "image": "../assets/8DoorsArumsAfterlifeAdvenure.jpg",
@@ -328,8 +375,10 @@ const products = [
         "relevance": 4.8,
         "price": 29.99,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Metroidvania"],
+        "genre": ["Platforms", "Fight"],
+        "trailer": "https://youtu.be/OLRdk9UNx08",
     },
     {
         "image": "../assets/deliverUsTheMoon.jpg",
@@ -337,8 +386,10 @@ const products = [
         "relevance": 4.5,
         "price": 24.99,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["KeokeN Interactive"],
+        "genre": ["Strategy","Adventure","Platforms"],
+        "trailer": "https://www.youtube.com/watch?v=RB17XR-i4hM",
     },
     {
         "image": "../assets/deathsDoor.jpg",
@@ -346,8 +397,10 @@ const products = [
         "relevance": 5.0,
         "price": 29.99,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Acid Nerve"],
+        "genre": ["Rol", "Adventure", "Fight"],
+        "trailer": "https://www.youtube.com/watch?v=MxzoW_fUx_8",
     },
     {
         "image": "../assets/ghostBusterSpiritsUnleashed.jpg",
@@ -355,8 +408,10 @@ const products = [
         "relevance": 3.3,
         "price": 40.31,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["IllFonic"],
+        "genre": ["Shoter"],
+        "trailer": "https://www.youtube.com/watch?v=OYWPBzz_wmI",
     },
     {
         "image": "../assets/vampireTheMasquerade.jpg",
@@ -364,8 +419,10 @@ const products = [
         "relevance": 4.1,
         "price": 51.33,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["HardSuit Labs", "Paradox Interactive"],
+        "genre": ["Rol", "Horror", "Strategy", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=TasT4b1qweA",
     },
     {
         "image": "../assets/apsulovEndOfGods.jpg",
@@ -373,8 +430,10 @@ const products = [
         "relevance": 4.3,
         "price": 34.36,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["Angry Demon Studio"],
+        "genre": ["Horror", "strategy", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=IuK0JQopc7c",
     },
     {
         "image": "../assets/theCalistoProtocol.jpg",
@@ -382,8 +441,10 @@ const products = [
         "relevance": 4.3,
         "price": 69.99,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["PUBG Studios", "Striking distance studios"],
+        "genre": ["Horror", "Shoter", "Fight"],
+        "trailer": "https://www.youtube.com/watch?v=BgiBtSH4ZyE",
     },
     {
         "image": "../assets/marthaIsDead.jpg",
@@ -391,8 +452,10 @@ const products = [
         "relevance": 4.4,
         "price": 29.90,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["LKA"],
+        "genre": ["Horror", "Adventure"],
+        "trailer": "https://www.youtube.com/watch?v=QpX6RSNQodQ",
     },
     {
         "image": "../assets/doNotOpen.jpg",
@@ -400,8 +463,10 @@ const products = [
         "relevance": 4.8,
         "price": 30.12,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": ["NOX NOCTIS", "Quasar Dynamics"],
+        "genre": ["Horror", "Strategy"],
+        "trailer": "https://www.youtube.com/watch?v=SfHpo5WcQEI",
     },
     {
         "image": "../assets/theWine.jpg",
@@ -409,8 +474,10 @@ const products = [
         "relevance": 4.8,
         "price": 26.87,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/fiveNightsAtFreddysSecurityBreach.jpg",
@@ -418,8 +485,10 @@ const products = [
         "relevance": 4.5,
         "price": 42.94,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/stray.jpg",
@@ -427,8 +496,10 @@ const products = [
         "relevance": 4.7,
         "price": 40.23,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/kenaBridgeOfSpirits.jpg",
@@ -436,8 +507,10 @@ const products = [
         "relevance": 4.7,
         "price": 53.23,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/steelRising.jpg",
@@ -445,8 +518,10 @@ const products = [
         "relevance": 4.5,
         "price": 59.62,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/gothamKnights.jpg",
@@ -454,8 +529,10 @@ const products = [
         "relevance": 4.1,
         "price": 75.45,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/NBA2K23.jpg",
@@ -463,8 +540,10 @@ const products = [
         "relevance": 4.8,
         "price": 27.25,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/mortalKombatUltimate.jpg",
@@ -472,8 +551,10 @@ const products = [
         "relevance": 4.5,
         "price": 30.74,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/overCookedAllYouCanEat.jpg",
@@ -481,8 +562,10 @@ const products = [
         "relevance": 4.4,
         "price": 26.39,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/callOfDuttyVanguard.jpg",
@@ -490,8 +573,10 @@ const products = [
         "relevance": 4.3,
         "price": 80.92,
         "age": 18,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/NBA2K21.jpg",
@@ -499,8 +584,10 @@ const products = [
         "relevance": 4.4,
         "price": 40.36,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/atari50.jpg",
@@ -508,8 +595,10 @@ const products = [
         "relevance": 4.8,
         "price": 40.11,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/ninjaTurtles.jpg",
@@ -517,8 +606,10 @@ const products = [
         "relevance": 4.7,
         "price": 40.33,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/asterixAndObelix.jpg",
@@ -526,8 +617,10 @@ const products = [
         "relevance": 4.6,
         "price": 29.84,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/cavemanNinja.jpg",
@@ -535,8 +628,10 @@ const products = [
         "relevance": 4.1,
         "price": 40.11,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/kaoTheKangaroo.jpg",
@@ -544,8 +639,10 @@ const products = [
         "relevance": 4.3,
         "price": 40.11,
         "age": 7,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/puyoPuyoTetris.jpg",
@@ -553,8 +650,10 @@ const products = [
         "relevance": 4.6,
         "price": 39.83,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/destructionAllStars.jpg",
@@ -562,8 +661,10 @@ const products = [
         "relevance": 3.7,
         "price": 19.84,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/monsterTruck.jpg",
@@ -571,8 +672,10 @@ const products = [
         "relevance": 4.0,
         "price": 19.99,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/edgeOfEternity.jpg",
@@ -580,8 +683,10 @@ const products = [
         "relevance": 4.5,
         "price": 38.52,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/w2c10.jpg",
@@ -589,8 +694,10 @@ const products = [
         "relevance": 4.4,
         "price": 29.35,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/theDioFieldChronicle.jpg",
@@ -598,8 +705,10 @@ const products = [
         "relevance": 4.4,
         "price": 35.03,
         "age": 16,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/inertialDrift.jpg",
@@ -607,8 +716,10 @@ const products = [
         "relevance": 4.7,
         "price": 29.85,
         "age": 3,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
     {
         "image": "../assets/tacticOgreReborn.jpg",
@@ -616,8 +727,10 @@ const products = [
         "relevance": 4.7,
         "price": 53.26,
         "age": 12,
-        "console": "Play Station 5"
-
+        "console": "Play Station 5",
+        "developers": [""],
+        "genre": [""],
+        "trailer": "",
     },
 ]
 

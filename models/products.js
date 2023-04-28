@@ -1,3 +1,4 @@
+const { url } = require('inspector');
 const mongoose = require('../utils/db')
 
 const objectSchema = mongoose.Schema({
@@ -31,6 +32,18 @@ const objectSchema = mongoose.Schema({
     console: {
         type: String,
         required: true
+    },
+    developers: {
+        type: Array,
+        // required: true
+    },
+    genre: {
+        type: Array,
+        // required: true
+    },
+    trailer: {
+        type: String,
+        // required: true
     },
     provider: {
         type: mongoose.Schema.Types.ObjectId,
