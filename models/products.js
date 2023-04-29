@@ -33,17 +33,21 @@ const objectSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    developers: {
+    others: {
         type: Array,
         // required: true
+    },
+    developers: {
+        type: Array,
+        required: true
     },
     genre: {
         type: Array,
-        // required: true
+        required: true
     },
     trailer: {
         type: String,
-        // required: true
+        required: true
     },
     provider: {
         type: mongoose.Schema.Types.ObjectId,
