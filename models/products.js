@@ -9,8 +9,7 @@ const objectSchema = mongoose.Schema({
     },
     name: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     relevance: {
         type: Number,
@@ -35,7 +34,6 @@ const objectSchema = mongoose.Schema({
     },
     others: {
         type: Array,
-        // required: true
     },
     developers: {
         type: Array,
@@ -47,7 +45,8 @@ const objectSchema = mongoose.Schema({
     },
     trailer: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     provider: {
         type: mongoose.Schema.Types.ObjectId,

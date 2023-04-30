@@ -21,10 +21,13 @@ const Products = () => {
   }
 
   return <section>
-      {status === 200 ?
-        products.map((product) => <Card products={product} key={uuidv4()} />) :
-        <></>
-      } 
+    {status === 200 ?
+      products
+        .sort((a, b) => (Math.random() * 1) - (Math.random() * 1))
+        .sort((a, b) => (Math.random() * 1) - (Math.random() * 1))
+        .map((product) => <Card products={product} key={uuidv4()} />) :
+      <></>
+    }
   </section>;
 
 };
