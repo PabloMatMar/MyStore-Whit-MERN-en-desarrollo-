@@ -32,7 +32,7 @@ const objectSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    exclusive: {
+    exclusiveness: {
         type: Boolean,
         required: true
     },
