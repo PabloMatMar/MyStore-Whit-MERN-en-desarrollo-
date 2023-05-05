@@ -32,6 +32,10 @@ const objectSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    exclusive: {
+        type: Boolean,
+        required: true
+    },
     others: {
         type: Array,
     },
