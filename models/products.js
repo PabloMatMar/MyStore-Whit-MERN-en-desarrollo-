@@ -11,7 +11,7 @@ const objectSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    relevance: {
+    opinion: {
         type: Number,
         required: true
     },
@@ -36,7 +36,7 @@ const objectSchema = mongoose.Schema({
         type: Boolean,
         required: true
     },
-    others: {
+    sharedWith: {
         type: Array,
     },
     developers: {
