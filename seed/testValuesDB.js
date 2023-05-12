@@ -15,6 +15,7 @@ const testing = () => {
     console.log("----------------------------------");
     console.log("IM TESTING THE OBJECT OF DATA BASE");
     console.log("----------------------------------\n");
+    
     console.log("PROPERTY: TRAILER\n");
 
     let errorImage = false;
@@ -28,7 +29,7 @@ const testing = () => {
     });
     if (!errorImage) {
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]);
-        console.log("The values in property price is in the parameters!");
+        console.log("The values in property price are in the parameters!");
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996]);
     };
     console.log("----------------------------------");
@@ -51,7 +52,7 @@ const testing = () => {
         errorConsole = true
     ) : (
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]),
-        console.log("The values in property Console is in the parameters!"),
+        console.log("The values in property Console are in the parameters!"),
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996])
     );
     console.log("----------------------------------");
@@ -71,7 +72,7 @@ const testing = () => {
     });
     if (!errorPrice) {
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]);
-        console.log("The values in property price is in the parameters!");
+        console.log("The values in property price are in the parameters!");
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996]);
     };
     console.log("----------------------------------");
@@ -90,7 +91,7 @@ const testing = () => {
     });
     if (!errorOpinion) {
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]);
-        console.log("The values in property opinion is in the parameters!");
+        console.log("The values in property opinion are in the parameters!");
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996]);
     };
     console.log("----------------------------------");
@@ -109,7 +110,7 @@ const testing = () => {
     });
     if (!errorAge) {
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]);
-        console.log("The values in property age is in the parameters!");
+        console.log("The values in property age are in the parameters!");
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996]);
     };
     console.log("----------------------------------");
@@ -133,7 +134,7 @@ const testing = () => {
     });
     if (!errorExclusiveness) {
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]);
-        console.log("The values in property exclusiveness is in the parameters!");
+        console.log("The values in property exclusiveness are in the parameters!");
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996]);
     };
     console.log("----------------------------------");
@@ -146,7 +147,7 @@ const testing = () => {
     games.map(e => {
         if (e.sharedWith.includes(e.console)) {
             console.log(emojis[2944], emojis[3053], " ERROR", emojis[3053], emojis[2944]);
-            console.log(`The name of the console is equal to one of the contents in the "sharedWith" array. ${emojis[2944]}ATTENTION.${emojis[2944]} Check if the game: ${e.name} is available on other consoles, if it is, see if the replay is in the console property or in the sharedWhit property. If, no, remove the name from the array, and set the uniqueness state to true.
+            console.log(`The name of the console is equal to one of the contents in the "sharedWith" array. ${emojis[2944]}ATTENTION.${emojis[2944]} Check if the game: ${e.name} is available on other consoles, if it is, see if the replay are in the console property or in the sharedWhit property. If, no, remove the name from the array, and set the uniqueness state to true.
             `);
             console.log(emojis[2944], emojis[3052], " ERROR", emojis[3052], emojis[2944]);
             errorSharedWith = true;
@@ -172,7 +173,7 @@ const testing = () => {
     }
     if (!errorSharedWith) {
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]);
-        console.log("The values in property sharedWith is in the parameters!");
+        console.log("The values in property sharedWith are in the parameters!");
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996]);
     };
     console.log("----------------------------------");
@@ -198,7 +199,7 @@ const testing = () => {
     }
     if (!errorGenre) {
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]);
-        console.log("The values in property genre is in the parameters!");
+        console.log("The values in property genre are in the parameters!");
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996]);
     };
     console.log("----------------------------------\n");
@@ -210,15 +211,15 @@ const testing = () => {
     games.map(e => {
         if (!e.trailer.includes('embed')) {
             console.log(emojis[2944], emojis[3053], " ERROR", emojis[3053], emojis[2944]);
-            console.log(`Search the string: watch?v= and changes it to: embed, 
-            be careful not to add spaces.`);
+            console.log(`Search the string: watch?v= and changes it to: embed/ 
+            Be careful not to add spaces.`);
             console.log(emojis[2944], emojis[3052], " ERROR", emojis[3052], emojis[2944]);
             errorTrailer = true;
         }
     });
     if (!errorTrailer) {
         console.log(emojis[2996], emojis[3053], " OK", emojis[3053], emojis[2996]);
-        console.log("The values in property price is in the parameters!");
+        console.log("The values in property price are in the parameters!");
         console.log(emojis[2996], emojis[3052], " OK", emojis[3052], emojis[2996]);
     };
     console.log("----------------------------------");
