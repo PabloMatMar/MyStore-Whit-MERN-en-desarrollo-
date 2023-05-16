@@ -1,11 +1,21 @@
 const Product = require('../models/products');
 
+const getProductByName = async (req, res) => {
+    try {
+        let products;
+        const data = req.params.name.slice(1);
+        products = await Product.find({ "name": data }, { _id: 0, __V: 0 }), res.status(200).json(products)
+    } catch (err) {
+        res.status(500).json({ msj: err.message });
+    };
+};
+
 
 const getGamesWithTheSameDevelopers = async (req, res) => {
     try {
         let products;
-        const data = JSON.parse(req.query.object);
-        data.developers != undefined && typeof (data.developers) == 'string' ? (products = await Product.find({ "developers": data.developers }, { _id: 0, __V: 0 }), res.status(200).json(products)) : res.status(400).json({ error: 'HTTP query parameter error' });
+        const data = req.params.developers.slice(1)
+        products = await Product.find({ "developers": data }, { _id: 0, __V: 0 }), res.status(200).json(products)
     } catch (err) {
         console.log(err.message);
         res.status(500).json({ msj: err.message });
@@ -66,5 +76,6 @@ module.exports = {
     getProducts,
     getSpecificProduct,
     getSharedProducts,
-    getGamesWithTheSameDevelopers
+    getGamesWithTheSameDevelopers,
+    getProductByName
 };
