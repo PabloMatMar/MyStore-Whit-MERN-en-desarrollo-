@@ -1,5 +1,17 @@
 const Product = require('../models/products');
 
+
+const getGamesWithTheSameDevelopers = async (req, res) => {
+    try {
+        let products;
+        const data = JSON.parse(req.query.object);
+        data.developers != undefined && typeof (data.developers) == 'string' ? (products = await Product.find({ "developers": data.developers }, { _id: 0, __V: 0 }), res.status(200).json(products)) : res.status(400).json({ error: 'HTTP query parameter error' });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).json({ msj: err.message });
+    };
+};
+
 const getSharedProducts = async (req, res) => {
     try {
         let products;
@@ -8,6 +20,7 @@ const getSharedProducts = async (req, res) => {
             (products = await Product.find({ "name": data.name, "console": data.console }, { _id: 0, __v: 0 }), res.status(200).json(products)) : res.status(400).json({ error: 'HTTP query parameter error' })
 
     } catch (err) {
+        console.log(err.message);
         res.status(500).json({ msj: err.message });
     }
 };
@@ -18,6 +31,7 @@ const getProducts = async (req, res) => {
         let products = await Product.find({}, { _id: 0, __v: 0 });
         res.status(200).json(products);
     } catch (err) {
+        console.log(err.message);
         res.status(500).json({ msj: err.message });
     };
 };
@@ -43,7 +57,7 @@ const getSpecificProduct = async (req, res) => {
         res.status(200).json(products);
 
     } catch (err) {
-        console.log('Server Error, GET Method');
+        console.log(err.message);
         res.status(500).json({ msj: err.message });
     };
 };
@@ -51,5 +65,6 @@ const getSpecificProduct = async (req, res) => {
 module.exports = {
     getProducts,
     getSpecificProduct,
-    getSharedProducts
+    getSharedProducts,
+    getGamesWithTheSameDevelopers
 };
