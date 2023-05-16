@@ -1,34 +1,81 @@
 const Product = require('../models/products');
-const Providers = require('../models/providers');
+
+const getProductByName = async (req, res) => {
+    try {
+        let products;
+        const data = req.params.name.slice(1);
+        products = await Product.find({ "name": data }, { _id: 0, __V: 0 }), res.status(200).json(products)
+    } catch (err) {
+        res.status(500).json({ msj: err.message });
+    };
+};
+
+
+const getGamesWithTheSameDevelopers = async (req, res) => {
+    try {
+        let products;
+        const data = req.params.developers.slice(1)
+        products = await Product.find({ "developers": data }, { _id: 0, __V: 0 }), res.status(200).json(products)
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).json({ msj: err.message });
+    };
+};
+
+const getSharedProducts = async (req, res) => {
+    try {
+        let products;
+        const data = JSON.parse(req.query.object);
+        data.console != undefined && data.name != undefined && typeof (data.console) == 'string' && typeof (data.name) == 'string' ?
+            (products = await Product.find({ "name": data.name, "console": data.console }, { _id: 0, __v: 0 }), res.status(200).json(products)) : res.status(400).json({ error: 'HTTP query parameter error' })
+
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).json({ msj: err.message });
+    }
+};
 
 
 const getProducts = async (req, res) => {
-
     try {
-        const products = await Product.find({}, { _id: 0, __v: 0 });
-        res.json(products);
+        let products = await Product.find({}, { _id: 0, __v: 0 });
+        res.status(200).json(products);
     } catch (err) {
-        req.status(500).send('Server Error, GET Method');
-    }
-}
+        console.log(err.message);
+        res.status(500).json({ msj: err.message });
+    };
+};
 
 
 const getSpecificProduct = async (req, res) => {
     try {
-        const product = await Product.find({ id: req.params.id }, { _id: 0, __v: 0 }).populate({path: 'provider', Model: Providers });
-        res.json(product);
+        let products;
+        const data = JSON.parse(req.query.object);
+        if (data.console != undefined && data.exclusiveness != undefined && data.genre != undefined)
+            products = await Product.find({ "console": data.console, "exclusiveness": data.exclusiveness, "genre": data.genre }, { _id: 0, __v: 0 });
+        else if (data.console != undefined && data.genre != undefined)
+            products = await Product.find({ "console": data.console, "genre": data.genre }, { _id: 0, __v: 0 });
+        else if (data.console != undefined && data.exclusiveness != undefined)
+            products = await Product.find({ "console": data.console, "exclusiveness": data.exclusiveness }, { _id: 0, __v: 0 });
+        else if (data.console != undefined)
+            products = await Product.find({ "console": data.console }, { _id: 0, __v: 0 });
+        else if (data.genre != undefined)
+            products = await Product.find({ "genre": data.genre }, { _id: 0, __v: 0 });
+        else
+            res.status(400).json({ error: 'HTTP query parameter error' });
+
+        res.status(200).json(products);
 
     } catch (err) {
-        const product = await Product.find({ id: req.params.id });
-        if (product === undefined) {
-            req.status(404).send('This product doesnt exist');
-        } else {
-            req.status(500).send('Server Error, GET Method');
-        }
-    }
-}
+        console.log(err.message);
+        res.status(500).json({ msj: err.message });
+    };
+};
 
 module.exports = {
     getProducts,
-    getSpecificProduct
-}
+    getSpecificProduct,
+    getSharedProducts,
+    getGamesWithTheSameDevelopers,
+    getProductByName
+};
