@@ -4,9 +4,9 @@ const router = express.Router();
 const productsControllers = require('../controllers/productsControllers')
 
 
-router.get('/', productsControllers.getProducts)
-
-router.get('/filter?',productsControllers.getSpecificProduct)
+router.get('/shared?', productsControllers.getSharedProducts);
+router.get('/filter?',productsControllers.getSpecificProduct);
+router.get('/', productsControllers.getProducts);
 
 
 module.exports = router;
