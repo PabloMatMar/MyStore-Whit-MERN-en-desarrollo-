@@ -6,7 +6,7 @@ const productsControllers = require('../controllers/productsControllers')
 
 router.get('/', productsControllers.getProducts)
 
-router.get('/:id',productsControllers.getSpecificProduct)
+router.get('/filter?',productsControllers.getSpecificProduct)
 
 
 module.exports = router;
