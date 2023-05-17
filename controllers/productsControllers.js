@@ -35,18 +35,6 @@ const getSharedProducts = async (req, res) => {
     }
 };
 
-
-const getProducts = async (req, res) => {
-    try {
-        let products = await Product.find({}, { _id: 0, __v: 0 });
-        res.status(200).json(products);
-    } catch (err) {
-        console.log(err.message);
-        res.status(500).json({ msj: err.message });
-    };
-};
-
-
 const getSpecificProduct = async (req, res) => {
     try {
         let products;
@@ -62,18 +50,19 @@ const getSpecificProduct = async (req, res) => {
         else if (data.genre != undefined)
             products = await Product.find({ "genre": data.genre }, { _id: 0, __v: 0 });
         else
-            res.status(400).json({ error: 'HTTP query parameter error' });
+            products = await Product.find({}, { _id: 0, __v: 0 });
 
         res.status(200).json(products);
 
     } catch (err) {
         console.log(err.message);
-        res.status(500).json({ msj: err.message });
+        data.console == undefined && data.exclusiveness == undefined && data.genre == undefined ?
+            res.status(500).json({ msj: err.message }) : res.status(400).json({ msj: 'HTTP query parameter error, dont enter parameters by hand!' });
+
     };
 };
 
 module.exports = {
-    getProducts,
     getSpecificProduct,
     getSharedProducts,
     getGamesWithTheSameDevelopers,
