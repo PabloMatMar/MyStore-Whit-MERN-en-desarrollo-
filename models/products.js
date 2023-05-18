@@ -25,7 +25,7 @@ const objectSchema = mongoose.Schema({
         unique: true
     },
     age: {
-        type: String,
+        type: Number,
         required: true
     },
     console: {
