@@ -25,6 +25,7 @@ const Products = () => {
 
 
   const handleOnChangeGenre = (event) => {
+    //Controlo y cambio los valores de los atributos checked:
     let genres = {
       "Adventure": isChecked.Adventure,
       "Classic": isChecked.Classic,
@@ -39,48 +40,33 @@ const Products = () => {
       "Strategy": isChecked.Strategy
     }
     isChecked[event.target.name] === false ? genres[event.target.name] = true : genres[event.target.name] = false;
-    setIsChecked(genres)
+    setIsChecked(genres);
+    //Cambio el valor del filtro de campo que voy a pasar a la peticion para mongo:
+    let genreValue;
 
     if (categories.genre === undefined)
-      setCategories({
-        "genre": {
-          "$in": [
-            event.target.name
-          ]
-        },
-        "console": categories.console,
-        "exclusiveness": categories.exclusiveness,
-        "age": { "$gte": 0 },
-        "price": { "$gte": 15, "$lte": 100 },
-        "opinion": { "$gte": 0, "$lte": 5 }
-      });
+      genreValue = {
+        "$in": [
+          event.target.name
+        ]
+      };
     else if (categories.genre.$in.includes(event.target.name))
-      categories.genre.$in.length === 1 ? setCategories({
-        "genre": undefined,
-        "console": categories.console,
-        "exclusiveness": categories.exclusiveness,
-        "age": { "$gte": 0 },
-        "price": { "$gte": 15, "$lte": 100 },
-        "opinion": { "$gte": 0, "$lte": 5 }
-      }) : setCategories({
-        "genre": { "$in": categories.genre.$in.slice(0, [categories.genre.$in.indexOf(event.target.name)]).concat(categories.genre.$in.slice([categories.genre.$in.indexOf(event.target.name)] + 1)) },
-        "console": categories.console,
-        "exclusiveness": categories.exclusiveness,
-        "age": { "$gte": 0 },
-        "price": { "$gte": 15, "$lte": 100 },
-        "opinion": { "$gte": 0, "$lte": 5 }
-      })
+      categories.genre.$in.length === 1 ?
+        genreValue = undefined : genreValue = { "$in": categories.genre.$in.slice(0, [categories.genre.$in.indexOf(event.target.name)]).concat(categories.genre.$in.slice([categories.genre.$in.indexOf(event.target.name)] + 1)) };
     else if (!(categories.genre.$in.includes(event.target.name)))
-      setCategories({
-        "genre": {
-          "$in": [...categories.genre.$in, event.target.name]
-        },
-        "console": categories.console,
-        "exclusiveness": categories.exclusiveness,
-        "age": { "$gte": 0 },
-        "price": { "$gte": 15, "$lte": 100 },
-        "opinion": { "$gte": 0, "$lte": 5 }
-      });
+      genreValue = {
+        "$in": [...categories.genre.$in, event.target.name]
+      };
+    //Seteo el valor que he cambiado junto con el resto de valores guardados en el state(contex en breve)
+    setCategories({
+      "genre": genreValue,
+      "console": categories.console,
+      "exclusiveness": categories.exclusiveness,
+      "age": categories.age,
+      "price": categories.price,
+      "opinion": categories.opinion
+
+    });
   };
 
   useEffect(() => {
