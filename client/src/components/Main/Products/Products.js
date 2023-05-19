@@ -5,6 +5,7 @@ import Genre from './Genre/Genre';
 import Age from './Age/Age';
 import Price from './Price/Price';
 import Opinion from './Opinion/Opinion';
+import Console from './Console/Console';
 
 const Products = () => {
 
@@ -30,6 +31,7 @@ const Products = () => {
     <Age categories={categories} setCategories={setCategories} />
     <Price categories={categories} setCategories={setCategories} />
     <Opinion categories={categories} setCategories={setCategories} />
+    <Console categories={categories} setCategories={setCategories} />
     {status === 200 ?
       products
         .sort((a, b) => Math.random() - Math.random())
