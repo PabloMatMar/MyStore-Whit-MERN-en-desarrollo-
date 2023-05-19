@@ -4,6 +4,7 @@ import Card from './Card';
 import Genre from './Genre/Genre';
 import Age from './Age/Age';
 import Price from './Price/Price';
+import Opinion from './Opinion/Opinion';
 
 const Products = () => {
 
@@ -25,9 +26,10 @@ const Products = () => {
   }, [categories]);
 
   return <section>
-    <Genre categories={categories} setCategories={setCategories}/>
-    <Age categories={categories} setCategories={setCategories}/>
-    <Price categories={categories} setCategories={setCategories}/>
+    <Genre categories={categories} setCategories={setCategories} />
+    <Age categories={categories} setCategories={setCategories} />
+    <Price categories={categories} setCategories={setCategories} />
+    <Opinion categories={categories} setCategories={setCategories} />
     {status === 200 ?
       products
         .sort((a, b) => Math.random() - Math.random())
