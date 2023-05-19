@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Card from './Card';
-import Genre from "./Genre/Genre";
+import Genre from './Genre/Genre';
+import Age from './Age/Age';
 
 const Products = () => {
 
   const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState({ "genre": undefined, "console": undefined, "exclusiveness": undefined, "age": { "$gte": 0 }, "price": { "$gte": 15, "$lte": 100 }, "opinion": { "$gte": 0, "$lte": 5 } });
+  const [categories, setCategories] = useState({ "genre": undefined, "console": undefined, "exclusiveness": undefined, "age": { "$lte": 18 }, "price": { "$gte": 15, "$lte": 100 }, "opinion": { "$gte": 0, "$lte": 5 } });
   const [status, setStatus] = useState(0);
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const Products = () => {
 
   return <section>
     <Genre categories={categories} setCategories={setCategories}/>
+    <Age categories={categories} setCategories={setCategories}/>
     {status === 200 ?
       products
         .sort((a, b) => Math.random() - Math.random())
