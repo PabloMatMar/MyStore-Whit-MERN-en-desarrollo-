@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Card from './Card';
 import Genre from './Genre/Genre';
 import Age from './Age/Age';
+import Price from './Price/Price';
 
 const Products = () => {
 
@@ -26,6 +27,7 @@ const Products = () => {
   return <section>
     <Genre categories={categories} setCategories={setCategories}/>
     <Age categories={categories} setCategories={setCategories}/>
+    <Price categories={categories} setCategories={setCategories}/>
     {status === 200 ?
       products
         .sort((a, b) => Math.random() - Math.random())

@@ -5,7 +5,6 @@ const Age = (hookFromFather) => {
   const { categories, setCategories } = hookFromFather;
 
   const handleOnChangeGenre = (event) => {
-    console.log(event.target.value);
     setCategories({
       "genre": categories.genre,
       "console": categories.console,
