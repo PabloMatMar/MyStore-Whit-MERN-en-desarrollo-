@@ -42,7 +42,7 @@ const Console = (hooksFromFather) => {
       };
     else if (categories.console.$in.includes(event.target.name))
       categories.console.$in.length === 1 ?
-        consoleValue = undefined : consoleValue = { "$in": categories.console.$in.slice(0, [categories.console.$in.indexOf(event.target.name)]).concat(categories.console.$in.slice([categories.console.$in.indexOf(event.target.name)] + 1)) };
+        consoleValue = undefined : consoleValue = { "$in": categories.console.$in.slice(0, [categories.console.$in.indexOf(event.target.name)]).concat(categories.console.$in.slice(categories.console.$in.indexOf(event.target.name) + 1)) };
     else if (!(categories.console.$in.includes(event.target.name)))
       consoleValue = {
         "$in": [...categories.console.$in, event.target.name]

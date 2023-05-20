@@ -47,7 +47,7 @@ const Genre = (hookFromFather) => {
       };
     else if (categories.genre.$in.includes(event.target.name))
       categories.genre.$in.length === 1 ?
-        genreValue = undefined : genreValue = { "$in": categories.genre.$in.slice(0, [categories.genre.$in.indexOf(event.target.name)]).concat(categories.genre.$in.slice([categories.genre.$in.indexOf(event.target.name)] + 1)) };
+        genreValue = undefined : genreValue = { "$in": categories.genre.$in.slice(0, [categories.genre.$in.indexOf(event.target.name)]).concat(categories.genre.$in.slice(categories.genre.$in.indexOf(event.target.name) + 1)) };
     else if (!(categories.genre.$in.includes(event.target.name)))
       genreValue = {
         "$in": [...categories.genre.$in, event.target.name]
