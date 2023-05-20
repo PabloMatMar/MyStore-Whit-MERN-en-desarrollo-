@@ -1,5 +1,5 @@
 import React from "react";
-import {render, screen} from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Console from "./Console";
 
 describe("Console", () => {
@@ -10,9 +10,25 @@ describe("Console", () => {
     const setCategories = (setCategories) => {
       return categories = setCategories;
     };
+    let isConsoleChecked = {
+      "Play Station 5": false,
+      "Xbox Series": false,
+      "Nintendo Switch": false
+    };
+    const setIsConsoleChecked = (setIsConsoleChecked) => {
+      return isConsoleChecked = setIsConsoleChecked
+    }
+    let isExclusivenessChecked = {
+      "Play Station 5": false,
+      "Xbox Series": false,
+      "Nintendo Switch": false
+    };
+    const setIsExclusivenessChecked = (setIsExclusivenessChecked) => {
+      return isExclusivenessChecked = setIsExclusivenessChecked
+    };
 
     render(
-      <Console categories={categories} setCategories={setCategories} />
+      <Console categories={categories} setCategories={setCategories} isConsoleChecked={isConsoleChecked} setIsConsoleChecked={setIsConsoleChecked} setIsExclusivenessChecked={setIsExclusivenessChecked} />
     );
     expect(screen).toMatchSnapshot();
   });
