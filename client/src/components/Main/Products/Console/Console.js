@@ -1,29 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import arrOfConsoles from './consoles.json';
 
-const Console = (hookFromFather) => {
+const Console = (hooksFromFather) => {
   //Hago destructuing del hookState que recibo del padre
-  const { categories, setCategories } = hookFromFather;
-  const [isChecked, setIsChecked] = useState({
-    "Play Station 5": false,
-    "Xbox Series": false,
-    "Nintendo Switch": false
-  });
+  const { categories, setCategories, isConsoleChecked, setIsConsoleChecked, setIsExclusivenessChecked } = hooksFromFather;
 
   const handleOnChangeGenre = (event) => {
     //Controlo y cambio los valores de los atributos checked:
     let consoles = {
-      "Play Station 5": isChecked["Play Station 5"],
-      "Xbox Series": isChecked["Xbox Series"],
-      "Nintendo Switch": isChecked["Nintendo Switch"]
+      "Play Station 5": isConsoleChecked["Play Station 5"],
+      "Xbox Series": isConsoleChecked["Xbox Series"],
+      "Nintendo Switch": isConsoleChecked["Nintendo Switch"]
     }
-    isChecked[event.target.name] === false ? consoles[event.target.name] = true : consoles[event.target.name] = false;
-    setIsChecked(consoles);
+    isConsoleChecked[event.target.name] === false ? consoles[event.target.name] = true : consoles[event.target.name] = false;
+    setIsConsoleChecked(consoles);
     //Cambio el valor del filtro de campo que voy a pasar a la peticion para mongo:
     let consoleValue;
+    let exclusivenessValue = categories.exclusiveness
+    if (categories.exclusiveness === true) {
+      //Seteo a false los checklist de exclusiveness y seteo el valor de las consolas a la pulsada en
+      //consola, tambien seteo la categoria undefinded a undefinded ya que o buscas por exclusivos o por
+      // genericos pero no ambas ya que carece de sentido.
+      setIsExclusivenessChecked({
+        "Play Station 5": false,
+        "Xbox Series": false,
+        "Nintendo Switch": false
+      });
+      exclusivenessValue = undefined;
+      consoleValue = {
+        "$in": [
+          event.target.name
+        ]
+      };
 
-    if (categories.console === undefined)
+    } else if (categories.console === undefined)
       consoleValue = {
         "$in": [
           event.target.name
@@ -40,11 +51,10 @@ const Console = (hookFromFather) => {
     setCategories({
       "genre": categories.genre,
       "console": consoleValue,
-      "exclusiveness": categories.exclusiveness,
+      "exclusiveness": exclusivenessValue,
       "age": categories.age,
       "price": categories.price,
       "opinion": categories.opinion
-
     });
   };
 
@@ -53,7 +63,7 @@ const Console = (hookFromFather) => {
       <legend>Filter by game consoles:</legend>
       {arrOfConsoles.map(e => {
         return <div key={uuidv4()}>
-          <input type="checkbox" id={e} name={e} onChange={handleOnChangeGenre} checked={isChecked[e]} />
+          <input type="checkbox" id={e} name={e} onChange={handleOnChangeGenre} checked={isConsoleChecked[e]} />
           <label htmlFor={e}>{e}</label>
         </div>
       })}
