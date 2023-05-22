@@ -8,8 +8,8 @@ const Card = ({ products }) => {
         <p>Name: <br />
           {products.name}
         </p>
-        <p>Relevance: <br />
-          {products.relevance}
+        <p>Opinion: <br />
+          {products.opinion}
         </p>
         <p>Price: <br />
           {products.price}€
