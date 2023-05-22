@@ -47,31 +47,33 @@ const getSpecificProduct = async (req, res) => {
     try {
         let products;
         const data = JSON.parse(req.query.object);
+        const limit = req.query.limit;
+        const skip = req.query.skip;
         if (data.console != undefined && data.exclusiveness != undefined && data.genre != undefined)
 
-            products = await Product.find({ "console": data.console, "exclusiveness": data.exclusiveness, "genre": data.genre, "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 });
+            products = await Product.find({ "console": data.console, "exclusiveness": data.exclusiveness, "genre": data.genre, "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 }).skip(skip).limit(limit);
 
         else if (data.console != undefined && data.genre != undefined)
 
-            products = await Product.find({ "console": data.console, "genre": data.genre, "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 });
+            products = await Product.find({ "console": data.console, "genre": data.genre, "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 }).skip(skip).limit(limit);
 
         else if (data.console != undefined && data.exclusiveness != undefined)
 
-            products = await Product.find({ "console": data.console, "exclusiveness": data.exclusiveness, "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 });
+            products = await Product.find({ "console": data.console, "exclusiveness": data.exclusiveness, "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 }).skip(skip).limit(limit);
 
         else if (data.console != undefined)
 
-            products = await Product.find({ "console": data.console, "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 });
+            products = await Product.find({ "console": data.console, "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 }).skip(skip).limit(limit);
 
         else if (data.genre != undefined)
 
-            products = await Product.find({ "genre": data.genre, "age": data.age }, { _id: 0, __v: 0 });
+            products = await Product.find({ "genre": data.genre, "age": data.age }, { _id: 0, __v: 0 }).skip(skip).limit(limit);
 
         //Añado una ultima opcion de peticion para los casos de filtrado en que solo se pida una o
         //varias de las opciones que vienen por defecto en la peticion. O ninguna ya que por defecto el filtro
         // devuelve todo.
         else
-            products = await Product.find({ "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 });
+            products = await Product.find({ "age": data.age, "price": data.price, "opinion": data.opinion }, { _id: 0, __v: 0 }).skip(skip).limit(limit);
 
 
         res.status(200).json(products);
