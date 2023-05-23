@@ -8,15 +8,14 @@ const TitleFormat = ({ title }) => {
     const titleCase = () => {
       if (title !== undefined) {
         let minorWords = minorWordsJSON.minorWords.join(' ').toLowerCase();
-        console.log(title);
         setTitleFormat(title
           .toLowerCase()
           .split(' ')
           .map((e, ind) => e
             .split('')
             .map((el, i) => {
-              return ind == 0 && i == 0 ? el.toUpperCase() :
-                !minorWords.split(' ').includes(e) && i == 0 ? el.toUpperCase() : el.toLowerCase();
+              return ind === 0 && i === 0 ? el.toUpperCase() :
+                !minorWords.split(' ').includes(e) && i === 0 ? el.toUpperCase() : el.toLowerCase();
             }).join(''))
           .join(' ')
         )

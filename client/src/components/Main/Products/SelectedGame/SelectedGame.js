@@ -31,7 +31,7 @@ const SelectedGame = ({ selected }) => {
     {selectedGame !== undefined && selectedGame !== null ?
       <article className="selected">
         <img src={selectedGame.image} alt={selectedGame.name} width="18%" />
-        {/* <iframe width="400" height="200" src={selectedGame.trailer} title={selectedGame.name} allowFullScreen ></iframe> */}
+        <iframe width="400" height="200" src={selectedGame.trailer} title={selectedGame.name} allowFullScreen ></iframe>
         <div className="fields">
           <p>{selectedGame.sharedWith.map(e => <button onClick={() => query(e)} key={uuidv4()}>{e}</button>)}</p>
         </div>
