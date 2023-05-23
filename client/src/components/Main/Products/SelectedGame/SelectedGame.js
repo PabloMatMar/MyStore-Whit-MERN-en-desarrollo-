@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import TitleFormat from "../Card/TitleFormat/TitleFormat";
 
 const SelectedGame = ({ selected }) => {
   const [object, setObject] = useState({});
@@ -35,7 +36,7 @@ const SelectedGame = ({ selected }) => {
           <p>{selectedGame.sharedWith.map(e => <button onClick={() => query(e)} key={uuidv4()}>{e}</button>)}</p>
         </div>
         <div className="fields">
-          <p>{selectedGame.name}</p>
+          <TitleFormat title={selectedGame.name} />
           <p>Opinions: {selectedGame.opinion}</p>
           <p>Price: {selectedGame.price}€</p>
           <p>Age: {selectedGame.age}</p>
