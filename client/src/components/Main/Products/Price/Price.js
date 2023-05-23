@@ -7,7 +7,7 @@ const Price = (hookFromFather) => {
     console.log(event.target.name)
     let minPriceValue = categories.price.$gte;
     let maxPriceValue = categories.price.$lte;
-    event.target.name == "minPrice" ? minPriceValue = event.target.value : maxPriceValue = event.target.value;
+    event.target.name === "minPrice" ? minPriceValue = event.target.value : maxPriceValue = event.target.value;
     setCategories({
       "genre": categories.genre,
       "console": categories.console,

@@ -1,21 +1,27 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Card = ({ products }) => {
+const Card = ({ product, setSelected }) => {
+
+  const setGame = () => {
+    setSelected(product)
+  };
+
   return <div>
-    {products !== undefined ?
+    {product !== undefined ?
       <>
         <p>Name: <br />
-          {products.name}
+          {product.name}
         </p>
         <p>Opinion: <br />
-          {products.opinion}
+          {product.opinion}
         </p>
         <p>Price: <br />
-          {products.price}€
+          {product.price}€
         </p>
-        <img src={products.image} alt={products.name} width="10%"/> <br />
-        <Link to={'http://localhost:3000/products/'+products.id}>Details</Link>
+        <img src={product.image} alt={product.name} width="40%" /> <br />
+        <button onClick={setGame}>Select</button>
+        <Link to={'http://localhost:3000/products/' + product.id}>Details</Link>
       </> :
       <></>
     }

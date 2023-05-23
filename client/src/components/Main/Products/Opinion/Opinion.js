@@ -7,7 +7,7 @@ const Opinion = (hookFromFather) => {
     console.log(event.target.name)
     let minOpinionValue = categories.opinion.$gte;
     let maxOpinionValue = categories.opinion.$lte;
-    event.target.name == "minOpinion" ? minOpinionValue = event.target.value : maxOpinionValue = event.target.value;
+    event.target.name === "minOpinion" ? minOpinionValue = event.target.value : maxOpinionValue = event.target.value;
     setCategories({
       "genre": categories.genre,
       "console": categories.console,

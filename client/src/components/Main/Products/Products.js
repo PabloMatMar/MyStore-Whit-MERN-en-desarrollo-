@@ -7,12 +7,14 @@ import Price from './Price/Price';
 import Opinion from './Opinion/Opinion';
 import Console from './Console/Console';
 import Exclusiveness from './Exclusiveness/Exclusiveness';
+import SelectedGame from './SelectedGame/SelectedGame';
 
 const Products = () => {
 
   // const [users, setUsers] = useState([]);
   const [limit] = useState(5);
   const [skip, setSkip] = useState(0);
+  const [selected, setSelected] = useState({});
 
   const [products, setProducts] = useState([]);
   // const [status, setStatus] = useState(0);
@@ -57,25 +59,38 @@ const Products = () => {
     setSkip(0)
   };
 
-  return <section>
-    <Genre categories={categories} setCategories={setCategories} />
-    <Age categories={categories} setCategories={setCategories} />
-    <Price categories={categories} setCategories={setCategories} />
-    <Opinion categories={categories} setCategories={setCategories} />
-    <Console categories={categories} setCategories={setCategories} isConsoleChecked={isConsoleChecked} setIsConsoleChecked={setIsConsoleChecked} setIsExclusivenessChecked={setIsExclusivenessChecked} />
-    <Exclusiveness categories={categories} setCategories={setCategories} setIsConsoleChecked={setIsConsoleChecked} isExclusivenessChecked={isExclusivenessChecked} setIsExclusivenessChecked={setIsExclusivenessChecked} />
-    {products.length > 0 ?
-      <div>
-        {products.map((product) => <Card products={product} key={uuidv4()} />)}
-        {skip > 0 ? <button onClick={previousPage}> Previous Page </button> : <></>}
-        {skip <= 185 ? <button onClick={nextPage}> Next Page </button> : <></>}
-      </div>
-      :
-      <div>
-        <p>There are no more products with the selected categories, change the categories or click on Reset button</p>
-        <button onClick={reset}>Reset</button>
-      </div>
-    }
+  return <section className='products'>
+    <article className='box1'>
+      <Genre categories={categories} setCategories={setCategories} />
+      <Age categories={categories} setCategories={setCategories} />
+      <Price categories={categories} setCategories={setCategories} />
+      <Opinion categories={categories} setCategories={setCategories} />
+      <Console categories={categories} setCategories={setCategories} isConsoleChecked={isConsoleChecked} setIsConsoleChecked={setIsConsoleChecked} setIsExclusivenessChecked={setIsExclusivenessChecked} />
+      <Exclusiveness categories={categories} setCategories={setCategories} setIsConsoleChecked={setIsConsoleChecked} isExclusivenessChecked={isExclusivenessChecked} setIsExclusivenessChecked={setIsExclusivenessChecked} />
+    </article>
+    <article className='box2'>
+      <article>
+        <SelectedGame selected={selected}/>
+      </article>
+      <article className='lineProducts'>
+        {products.length > 0 ?
+          <>
+            {products.map(product => <Card product={product} setSelected={setSelected} key={uuidv4()} />)}
+            <div className='buttons'>
+              {skip <= 185 ? <button onClick={nextPage}> Next Page </button> : <></>}
+              {skip > 0 ? <button onClick={previousPage}> Previous Page </button> : <></>}
+            </div>
+            {/* El div de abajo es simplemente para mantener el tamaño de las targetas en caso de no haber 5*/}
+            {products.length < 5 ? <div></div> : <></>}
+          </>
+          :
+          <div>
+            <p>There are no more products with the selected categories, change the categories or click on Reset button</p>
+            <button onClick={reset}>Reset</button>
+          </div>
+        }
+      </article>
+    </article>
   </section>;
 
 };

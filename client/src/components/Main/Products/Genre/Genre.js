@@ -66,7 +66,7 @@ const Genre = (hookFromFather) => {
 
   return <form>
     <fieldset>
-      <legend>Choose which filters you want to apply:</legend>
+      <legend>Choose genres:</legend>
       {arrOfGenres.map(e => {
         return <div key={uuidv4()}>
           <input type="checkbox" id={e} name={e} onChange={handleOnChangeGenre} checked={isChecked[e]} />
