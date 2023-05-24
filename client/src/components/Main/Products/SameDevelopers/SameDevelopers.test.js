@@ -27,7 +27,7 @@ describe("SameDevelopers", () => {
       return products = setProducts;
     };
 
-    render(<SameDevelopers />);
+    render(<SameDevelopers setDevelopers={setDevelopers} developers={developers} setProducts={setProducts} products={products} />);
     expect(screen).toMatchSnapshot();
   });
 });
