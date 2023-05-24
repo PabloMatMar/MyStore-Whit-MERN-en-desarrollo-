@@ -8,16 +8,16 @@ import Opinion from './Opinion/Opinion';
 import Console from './Console/Console';
 import Exclusiveness from './Exclusiveness/Exclusiveness';
 import SelectedGame from './SelectedGame/SelectedGame';
+import SameDevelopers from './SameDevelopers/SameDevelopers';
 
 const Products = () => {
 
-  // const [users, setUsers] = useState([]);
   const [limit] = useState(5);
   const [skip, setSkip] = useState(0);
   const [selected, setSelected] = useState({});
 
   const [products, setProducts] = useState([]);
-  // const [status, setStatus] = useState(0);
+  const [developers, setDevelopers] = useState();
   //Este hook se pasa a cada hijo de este componente para que sete los valores en los filtros de campo para la peticion al backend
   const [categories, setCategories] = useState({ "genre": undefined, "console": undefined, "exclusiveness": undefined, "age": { "$lte": 18 }, "price": { "$gte": 15, "$lte": 100 }, "opinion": { "$gte": 0, "$lte": 5 } });
   //Los siguientes dos hooks se pasan  ambos a dos hijos que requieren comunicacion sibling-sibling 
@@ -38,11 +38,13 @@ const Products = () => {
     //skip = indice desde el cual quiero que mongo empiece a devolver objetos.
     //limit = cantidad de objetos a devolver.
     async function fetchData() {
-      const filtersForFields = JSON.stringify(categories);
-      const res = await fetch(`http://localhost:5000/products/filter?object=${filtersForFields}&skip=${skip}&limit=${limit}`);
-      const data = await res.json();
-      console.log(data.length);
-      setProducts(data);
+      if (developers === undefined) {
+        const filtersForFields = JSON.stringify(categories);
+        const res = await fetch(`http://localhost:5000/products/filter?object=${filtersForFields}&skip=${skip}&limit=${limit}`);
+        const data = await res.json();
+        console.log(data.length);
+        setProducts(data);
+      };
     };
     fetchData();
   }, [categories, skip, limit]);
@@ -70,9 +72,10 @@ const Products = () => {
     </article>
     <article className='box2'>
       <article>
-        <SelectedGame selected={selected}/>
+        <SelectedGame selected={selected} setDevelopers={setDevelopers} />
       </article>
       <article className='lineProducts'>
+        {developers !== undefined ? <SameDevelopers developers={developers} setProducts={setProducts} setDevelopers={setDevelopers} products={products}/> : <></>}
         {products.length > 0 ?
           <>
             {products.map(product => <Card product={product} setSelected={setSelected} key={uuidv4()} />)}
