@@ -13,7 +13,7 @@ const SameDevelopers = ({ setDevelopers, developers, setProducts, products }) =>
       }
     };
     fetchData();
-  }, [developers, setProducts]);
+  }, [developers, setProducts, products]);
 
   const resetCategories = () => {
     setDevelopers(undefined);

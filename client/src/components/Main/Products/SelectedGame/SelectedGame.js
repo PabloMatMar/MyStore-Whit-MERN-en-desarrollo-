@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import TitleFormat from "../Card/TitleFormat/TitleFormat";
+import TitleFormat from '../Card/TitleFormat/TitleFormat';
+import SearchGame from './SearchGame/SearchGame'
 
 
-const SelectedGame = ({ selected, setDevelopers}) => {
+const SelectedGame = ({ selected, setDevelopers }) => {
   const [object, setObject] = useState({});
   const [selectedGame, setSelectedGame] = useState();
 
@@ -33,6 +34,7 @@ const SelectedGame = ({ selected, setDevelopers}) => {
   }
 
   return <>
+    <SearchGame setSelectedGame={setSelectedGame} />
     {selectedGame !== undefined && selectedGame !== null ?
       <article className="selected">
         <img src={selectedGame.image} alt={selectedGame.name} width="18%" />

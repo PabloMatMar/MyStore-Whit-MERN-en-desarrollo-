@@ -47,7 +47,7 @@ const Products = () => {
       };
     };
     fetchData();
-  }, [categories, skip, limit]);
+  }, [categories, skip, limit, developers]);
 
   const nextPage = () => {
     setSkip(skip + limit)
